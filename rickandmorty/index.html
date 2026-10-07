@@ -8,55 +8,19 @@
     <script src="js/script.js" defer></script>
   </head>
   <body>
+    <header>
+      <h1>Rick and Morty</h1>
+      <p>Personajes de la serie.</p>
+    </header>
+
     <main>
-      <h1>My Api</h1>
-      <p>Welcome to my API documentation.</p>
+      <div id="content" aria-label="Lista de personajes"></div>
 
-      <div id="content">
-        <div class="card">
-          <img
-            src="https://www.w3schools.com/howto/img_avatar.png"
-            alt="Avatar"
-          />
-          <div class="container">
-            <h4><b>John Doe</b></h4>
-            <p>Architect & Engineer</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            src="https://www.w3schools.com/howto/img_avatar.png"
-            alt="Avatar"
-          />
-          <div class="container">
-            <h4><b>John Doe</b></h4>
-            <p>Architect & Engineer</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            src="https://www.w3schools.com/howto/img_avatar.png"
-            alt="Avatar"
-          />
-          <div class="container">
-            <h4><b>John Doe</b></h4>
-            <p>Architect & Engineer</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <img
-            src="https://www.w3schools.com/howto/img_avatar.png"
-            alt="Avatar"
-          />
-          <div class="container">
-            <h4><b>John Doe</b></h4>
-            <p>Architect & Engineer</p>
-          </div>
-        </div>
-      </div>
+      <nav class="pagination" aria-label="Paginación">
+        <button id="prev" type="button">Anterior</button>
+        <span id="page-number"></span>
+        <button id="next" type="button">Siguiente</button>
+      </nav>
     </main>
   </body>
 </html>

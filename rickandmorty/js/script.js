@@ -48,19 +48,12 @@ async function loadCharacters(url) {
   prevButton.disabled = true;
   nextButton.disabled = true;
 
-  timeoutId = setTimeout(() => {
-    showMessage(
-      "La solicitud esta tardando demasiado. Revise su internet e intente de nuevo.",
-      true,
-    );
-  }, 1000000);
-
   try {
     const response = await fetch(url);
 
     if (!response.ok) {
       showMessage(
-        `El servidor respondio ${response.status}. No se pudo cargar los personajes.`,
+        `El servidor respondió ${response.status}. No se pudo cargar los personajes.`,
         true,
       );
       return;
@@ -77,7 +70,7 @@ async function loadCharacters(url) {
     pageNumber.textContent = `Página ${currentPage} de ${data.info.pages}`;
   } catch (error) {
     showMessage(
-      "No hay conexion con el servidor. Revise su internet e intente de nuevo.",
+      "No hay conexión con el servidor. Revise su internet e intente de nuevo.",
       true,
     );
   } finally {

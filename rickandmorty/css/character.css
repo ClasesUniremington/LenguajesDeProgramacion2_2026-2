@@ -1,0 +1,141 @@
+/* Tema blanco de la ficha */
+body {
+  color: #4f5b80;
+  background: #f6f7fb;
+}
+
+#home-link {
+  color: #1f2a5c;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#message {
+  background: #e8ebf7;
+}
+
+#message.error {
+  background: #fde4e4;
+}
+
+.character-detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin: 1.5rem 3.75rem;
+  box-shadow: 0 0.5rem 1.25rem rgba(15, 23, 42, 0.12);
+}
+
+.character-detail-container[hidden] {
+  display: none;
+}
+
+.character-poster {
+  width: 16rem;
+  max-width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.character-info {
+  flex: 1;
+  min-width: 16rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.character-info h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: inherit;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  width: fit-content;
+}
+
+.status-alive {
+  background: #dff7ea;
+  color: #0a6b3a;
+  border: 0.0625rem solid #0a6b3a;
+}
+
+.status-dead {
+  background: #fde3e3;
+  color: #8b1e1e;
+  border: 0.0625rem solid #8b1e1e;
+}
+
+.status-unknown {
+  background: #eaeefc;
+  color: #42527a;
+  border: 0.0625rem solid #42527a;
+}
+
+.info-item {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
+
+.info-label {
+  font-weight: bold;
+  opacity: 0.85;
+}
+
+/* Sección de episodios */
+.episodes-section {
+  margin: 2rem 3.75rem 3rem;
+}
+
+.episodes-section h2 {
+  margin-bottom: 1.25rem;
+}
+
+.episodes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.episode-line {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 0.0625rem solid #d5d9ea;
+}
+
+.episode-date {
+  opacity: 0.7;
+}
+
+@media (max-width: 37.5rem) {
+  .character-detail-container {
+    margin: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .character-info {
+    align-items: center;
+  }
+
+  .episodes-section {
+    margin: 1.5rem 1rem;
+  }
+}

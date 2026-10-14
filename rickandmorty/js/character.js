@@ -36,9 +36,7 @@ function showCharacter(character) {
 }
 
 async function loadEpisodes(episodeUrls) {
-  const episodeIds = episodeUrls
-    .map((url) => url.split("/").pop())
-    .join(",");
+  const episodeIds = episodeUrls.map((url) => url.split("/").pop()).join(",");
 
   showMessage("Cargando episodios...");
 
@@ -60,9 +58,16 @@ async function loadEpisodes(episodeUrls) {
     }
 
     episodeList.innerHTML = episodeArray
-      .map((episode) => `<li>${episode.episode} · ${episode.name}</li>`)
+      .map(
+        (episode) => `
+      <li>
+        <span>${episode.episode} · ${episode.name}</span>
+        <span class="episode-date">${episode.air_date}</span>
+      </li>
+    `,
+      )
       .join("");
-      
+
     showMessage("");
   } catch (error) {
     showMessage(

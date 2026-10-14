@@ -138,3 +138,121 @@ header h1 {
     gap: 0.75rem;
   }
 }
+/* Ficha del personaje */
+header a {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  background: #1f2a5c;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+header a:hover {
+  background: #35458b;
+}
+
+#character-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  align-items: center;
+  gap: 2rem;
+  margin: 1.5rem 3.75rem;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  background: #fff;
+  box-shadow: 0 0.25rem 0.75rem rgb(0 0 0 / 12%);
+}
+
+#character-detail .character-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+#character-detail .character-info h2 {
+  margin-top: 0;
+  color: #1f2a5c;
+  font-size: 1.75rem;
+}
+
+#character-detail .character-info p {
+  margin: 0.75rem 0;
+  line-height: 1.5;
+}
+
+/* Lista de episodios */
+main > section {
+  margin: 0 3.75rem 2.5rem;
+}
+
+main > section h2 {
+  color: #1f2a5c;
+}
+
+#episode-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#episode-list li {
+  padding: 0.85rem 1rem;
+  border: 0.0625rem solid #d5d9ea;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+/* Diseño para celular */
+@media (max-width: 37.5rem) {
+  header {
+    padding: 1rem;
+  }
+
+  #message {
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+
+  #character-detail {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  #character-detail .character-image {
+    max-width: 22rem;
+    margin: 0 auto;
+  }
+
+  main > section {
+    margin: 1rem;
+  }
+}
+
+#episode-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.episode-date {
+  color: #626b82;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 37.5rem) {
+  #episode-list li {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}

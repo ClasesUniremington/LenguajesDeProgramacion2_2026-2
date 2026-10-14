@@ -1,6 +1,8 @@
 const detailContainer = document.querySelector("#character-detail");
 const message = document.querySelector("#message");
+const episodeList = document.querySelector("#episode-list");
 const API = "https://rickandmortyapi.com/api/character/";
+const EPISODE_API = "https://rickandmortyapi.com/api/episode/";
 
 const params = new URLSearchParams(window.location.search);
 const characterId = params.get("id");
@@ -23,6 +25,32 @@ function showCharacter(character) {
       <p>Episodios: ${character.episode.length}</p>
   </section>
 `;
+}
+
+async function loadEpisodes(episodeUrls) {
+    const episodeIds = episodeUrls.map((url) => url.split("/").pop()).join(",");
+    try {
+  const response = await fetch(`${EPISODE_API}${episodeIds}`);
+  if (!response.ok) {
+    const episodes = await response.json();
+    let episodeArray;
+
+if (Array.isArray(episodes)) {
+  episodeArray = episodes;
+} else {
+  episodeArray = [episodes];
+}
+episodeList.innerHTML = episodeArray
+  .map((episode) => `<li>${episode.episode} · ${episode.name}</li>`)
+  .join("");
+  
+  showMessage("No se pudieron cargar los episodios.", true);
+  return;
+}
+} catch (error) {
+  showMessage("No se pudieron cargar los episodios.", true);
+}
+
 }
 
 async function loadCharacter() {

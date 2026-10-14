@@ -4,8 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personaje</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/character.js" defer></script>
   </head>
   <body>
-    
+    <header>
+      <h1>Rick and Morty</h1>
+      <a href="index.html"> <- Volver a la lista</a>
+    </header>
+    <main>
+      <p id="message" role="status"></p>
+      <article id="character-detail"></article>
+      <section aria-labelledby="episodes-title">
+        <h2 id="episodes-title">Episodios</h2>
+        <p id="episode-message" role="status"></p>
+        <ul id="episode-list"></ul>
+      </section>
+    </main>
   </body>
 </html>

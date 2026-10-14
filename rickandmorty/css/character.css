@@ -1,0 +1,94 @@
+header nav a {
+  color: #1f2a5c;
+}
+
+.character {
+  display: grid;
+  grid-template-columns: minmax(12rem, 20rem) 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.5rem 3.75rem;
+}
+
+.character[hidden],
+.episodes[hidden] {
+  display: none;
+}
+
+.character img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.character h2 {
+  margin: 0 0 1rem;
+}
+
+.character dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+.character dt {
+  font-weight: 700;
+}
+
+.character dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.episodes {
+  padding: 0 3.75rem 2.5rem;
+}
+
+#episodes-message {
+  margin: 0 0 0.75rem;
+}
+
+#episodes-message:empty {
+  display: none;
+}
+
+#episodes-message.error {
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  background: #fde4e4;
+  color: #7a1313;
+}
+
+.episodes ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.episodes li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding: 0.625rem 1rem;
+  background: #fff;
+  border-radius: 0.375rem;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 37.5rem) {
+  .character {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .episodes {
+    padding: 0 1rem 1.5rem;
+  }
+}

@@ -16,8 +16,8 @@ function createCard(character) {
             <img src="${character.image}" alt="${character.name}">
             <div class="container">
                 <h2>${character.name}</h2>
-                <p >Estado: ${character.status}</p>
-                <p >Especie: ${character.species}</p>
+                <p>Estado: ${character.status}</p>
+                <p>Especie: ${character.species}</p>
             </div>
         </article>
       </a>
@@ -39,7 +39,7 @@ function updateButtons() {
 }
 
 /**
- * Funcion para cargar todos los personajes de la API de Rick and Morty
+ * Función para cargar todos los personajes de la API de Rick and Morty
  */
 async function loadCharacters(url) {
   cardContainer.innerHTML = "";

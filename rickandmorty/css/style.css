@@ -1,140 +1,150 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+
 }
 
 body {
-  margin: 0;
-  font-family: system-ui, Arial, sans-serif;
-  color: #1b1f2a;
-  background: #f6f7fb;
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+    color: #f9f9f9;
+    background: #636161;
+
 }
 
+/*arriba,abajo y al lado(padding: 1.5rem 3.75rem 0 ;)*/
 header {
-  padding: 1.5rem 3.75rem 0;
+    padding: 1.5rem 1.35rem 0;
 }
 
 header h1 {
-  margin: 0 0 0.25rem;
+    margin: 0 0 0rem;
 }
 
 #content {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
-  gap: 1.25rem;
-  padding: 1.5rem 3.75rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+    gap: 1.25rem;
+    padding: 1.5rem 3.75rem;
 }
 
+/*.card .align-text{
+    margin-left: 1rem;}*/
+
+
 .card {
-  background: #fff;
-  box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  height: 100%;
+    background: #1109e18b;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    height: 100%;
 }
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.25);
 }
 
 .card img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
 }
 
 /* Add some padding inside the card container */
 .container {
-  padding: 0.625rem 1rem 0.875rem;
+    padding: 0.625rem 1rem 0.875rem;
 }
+
 
 .container h2,
 .container p {
-  margin: 1rem 0;
+    margin: 1rem 0;
 }
 
 #message {
-  margin: 1rem 3.75rem 0;
-  padding: 0.75rem 1rem;
-  border-radius: 0.375rem;
-  background: #e8ebf7;
+    margin: 1rem 3.75rem 0;
+    padding: 0.75rem 1rem;
+    border-radius: 0.375rem;
+    background: #fefeffa4;
+
 }
 
 #message:empty {
-  display: none;
+    display: none;
 }
 
 #message.error {
-  background: #fde4e4;
-  color: #7a1313;
+    background: #fde4e4;
+    color: #7a1313;
 }
 
 .spinner {
-  width: 2.5rem;
-  height: 2.5rem;
-  margin: 1.5rem auto;
-  border: 0.25rem solid #d5d9ea;
-  border-top-color: #1f2a5c;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 1.5rem auto;
+    border: 0.25rem solid #d5d9ea;
+    border-top-color: #1f2a5c;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
 }
 
 .spinner[hidden] {
-  display: none;
+    display: none
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+    to {
+        transform: rotate(360deg);
+    }
+
 }
 
+
 .pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.5rem 3.75rem 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 3.75rem 2.5rem;
 }
 
 .pagination button {
-  padding: 0.625rem 1.25rem;
-  font-size: 1rem;
-  border: 0;
-  border-radius: 0.375rem;
-  background: #1f2a5c;
-  color: #fff;
-  cursor: pointer;
+    padding: 0.625rem 1.25rem;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 0.375rem;
+    background: #445cc6;
+    color: #fff;
+    cursor: pointer;
+
 }
 
 .pagination button:disabled {
-  background: #b9bfd3;
-  cursor: not-allowed;
+    background: #b9bfd3;
+    cursor: not-allowed;
 }
 
 .card-link {
-  text-decoration: none;
-  color: inherit;
-  border-radius: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 0.5rem;
 }
 
 .card-link:focus-visible {
-  outline: 0.1875rem solid #1f2a5c;
-  outline-offset: 0.1875rem;
+    outline: 0.1875rem solid #367323b4;
+    outline-offset: 0.1875rem;
 }
 
-/**
-  Manejo de responsive
-*/
+/* Manejo de responsive*/
 @media (max-width: 37.5rem) {
-  header {
-    padding: 1rem 1rem 0;
-  }
+    header {
+        padding: 1rem 1rem 0;
+    }
+}
 
-  #content {
+#content {
     padding: 1rem;
     gap: 0.75rem;
-  }
 }

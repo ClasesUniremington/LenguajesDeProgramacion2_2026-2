@@ -11,17 +11,17 @@ let nextPage = null;
 
 function createCard(character) {
   return `
-      <a class="card-link" href="character.html?id=${character.id}">
-        <article class="card">
-            <img src="${character.image}" alt="${character.name}">
-            <div class="container">
-                <h2>${character.name}</h2>
-                <p >Estado: ${character.status}</p>
-                <p >Especie: ${character.species}</p>
-            </div>
-        </article>
-      </a>
-    `;
+    <a class="card-link" href="character.html?id=${character.id}">
+      <article class="card">
+        <img src="${character.image}" alt="${character.name}">
+        <div class="container">
+          <h2>${character.name}</h2>
+          <p>Estado: ${character.status}</p>
+          <p>Especie: ${character.species}</p>
+        </div>
+      </article>
+    </a>
+  `;
 }
 
 function showCharacters(characters) {
@@ -39,7 +39,7 @@ function updateButtons() {
 }
 
 /**
- * Funcion para cargar todos los personajes de la API de Rick and Morty
+ * Carga una página de personajes desde la API de Rick and Morty.
  */
 async function loadCharacters(url) {
   cardContainer.innerHTML = "";
@@ -53,8 +53,8 @@ async function loadCharacters(url) {
 
     if (!response.ok) {
       showMessage(
-        `El servidor respondió ${response.status}. No se pudo cargar los personajes.`,
-        true,
+        `El servidor respondió ${response.status}. No se pudieron cargar los personajes.`,
+        true
       );
       return;
     }
@@ -71,7 +71,7 @@ async function loadCharacters(url) {
   } catch (error) {
     showMessage(
       "No hay conexión con el servidor. Revise su internet e intente de nuevo.",
-      true,
+      true
     );
   } finally {
     spinner.hidden = true;
@@ -80,15 +80,11 @@ async function loadCharacters(url) {
 }
 
 prevButton.addEventListener("click", () => {
-  if (prevPage) {
-    loadCharacters(prevPage);
-  }
+  if (prevPage) loadCharacters(prevPage);
 });
 
 nextButton.addEventListener("click", () => {
-  if (nextPage) {
-    loadCharacters(nextPage);
-  }
+  if (nextPage) loadCharacters(nextPage);
 });
 
 loadCharacters(API);

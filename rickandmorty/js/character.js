@@ -35,3 +35,62 @@ function createCard(character, episodes) {
   `;
 }
 
+
+function showContent(character, episodes) {
+  cardContent.innerHTML = createCard(character, episodes);
+}
+
+function errorR(descripcionError) {
+  error.innerHTML = descripcionError;
+}
+
+function loading(descripcion) {
+  message.innerHTML = descripcion;
+}
+
+// url: endpoint de episodios | id: id del personaje
+// Devuelve una lista de objetos: [{ episode: "S01E01", name: "Pilot" }, ...]
+async function loadEpisodes(url, id) {
+  const episodiosDelPersonaje = [];
+
+  try {
+    let siguiente = url;
+
+    // La API entrega los episodios por páginas, así que repetimos
+    // mientras exista una página siguiente
+    while (siguiente) {
+      const response = await fetch(siguiente);
+
+      if (!response.ok) {
+        errorR(
+          `No se pudo completar la solicitud, por el error ${response.status}`,
+        );
+        return [];
+      }
+
+      const data = await response.json();
+
+      data.results.forEach((ep) => {
+        // ep.characters son URLs; el último pedazo de cada una es el id
+        const apareceEnEpisodio = ep.characters.some(
+          (urlPersonaje) => urlPersonaje.split("/").pop() === String(id),
+        );
+
+        if (apareceEnEpisodio) {
+          episodiosDelPersonaje.push({
+            episode: ep.episode,
+            name: ep.name,
+          });
+        }
+      });
+
+      siguiente = data.info.next; // null en la última página
+    }
+
+    return episodiosDelPersonaje;
+  } catch (e) {
+    errorR(`No se pudieron cargar los episodios por error de red o ${e}`);
+    return [];
+  }
+}
+

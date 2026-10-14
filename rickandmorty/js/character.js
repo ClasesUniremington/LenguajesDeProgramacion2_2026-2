@@ -5,7 +5,7 @@ const cardContent = document.querySelector("#content");
 const message = document.querySelector("#message");
 const link = window.location.search;
 
-// Recibe el personaje y la lista de episodios donde aparece
+
 function createCard(character, episodes) {
   return `
     <article class="card">
@@ -48,16 +48,14 @@ function loading(descripcion) {
   message.innerHTML = descripcion;
 }
 
-// url: endpoint de episodios | id: id del personaje
-// Devuelve una lista de objetos: [{ episode: "S01E01", name: "Pilot" }, ...]
+
 async function loadEpisodes(url, id) {
   const episodiosDelPersonaje = [];
 
   try {
     let siguiente = url;
 
-    // La API entrega los episodios por páginas, así que repetimos
-    // mientras exista una página siguiente
+  
     while (siguiente) {
       const response = await fetch(siguiente);
 
@@ -71,7 +69,7 @@ async function loadEpisodes(url, id) {
       const data = await response.json();
 
       data.results.forEach((ep) => {
-        // ep.characters son URLs; el último pedazo de cada una es el id
+        
         const apareceEnEpisodio = ep.characters.some(
           (urlPersonaje) => urlPersonaje.split("/").pop() === String(id),
         );
@@ -84,7 +82,7 @@ async function loadEpisodes(url, id) {
         }
       });
 
-      siguiente = data.info.next; // null en la última página
+      siguiente = data.info.next; 
     }
 
     return episodiosDelPersonaje;
@@ -105,7 +103,7 @@ async function loadCharacter(url) {
   try {
     loading("Cargando Personaje");
 
-    // Se pide directamente el personaje por su id
+    
     const response = await fetch(`${url}/${parametros}`);
 
     if (!response.ok) {
@@ -118,7 +116,7 @@ async function loadCharacter(url) {
 
     const personajeEncontrado = await response.json();
 
-    // Episodios donde aparece ese personaje
+    
     const episodes = await loadEpisodes(APIEpisodes, parametros);
 
     showContent(personajeEncontrado, episodes);
@@ -129,6 +127,6 @@ async function loadCharacter(url) {
   }
 }
 
-// loadEpisodes ya no se llama aparte: loadCharacter la usa con el id del personaje
+
 loadCharacter(API);
 

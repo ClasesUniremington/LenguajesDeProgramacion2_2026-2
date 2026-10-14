@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+#back{
+    background-color: blue;
+    color: white;
+}
+
 body {
   font-family: Georgia, "Times New Roman", serif;
   background: #f4f4f4;

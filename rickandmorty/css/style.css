@@ -209,7 +209,7 @@ main > section h2 {
   background: #fff;
 }
 
-/* Diseño para celular */
+
 @media (max-width: 37.5rem) {
   header {
     padding: 1rem;

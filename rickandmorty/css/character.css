@@ -1,0 +1,81 @@
+.back {
+  display: inline-block;
+  margin-top: 0.25rem;
+  color: #1f2a5c;
+}
+
+main {
+  padding: 1.5rem 3.75rem 2.5rem;
+}
+
+/* Imagen a la izquierda y datos a la derecha */
+.detail {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.detail img {
+  width: 16rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.info h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.75rem;
+}
+
+.info p {
+  margin: 0.25rem 0;
+}
+
+/* La etiqueta (Estado, Especie...) tiene ancho fijo para que los datos queden alineados */
+.info strong {
+  display: inline-block;
+  width: 6rem;
+}
+
+/* Lista de episodios */
+#episodes h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.125rem;
+}
+
+.episode-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.episode {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.625rem 1rem;
+  background: #fff;
+  border: 1px solid #d5d9ea;
+  border-radius: 0.375rem;
+}
+
+/* Celular: la imagen y los datos quedan uno debajo del otro */
+@media (max-width: 37.5rem) {
+  main {
+    padding: 1rem 1rem 2rem;
+  }
+
+  #message {
+    margin: 1rem 1rem 0;
+  }
+
+  .detail {
+    flex-direction: column;
+  }
+
+  .detail img {
+    width: 100%;
+  }
+}

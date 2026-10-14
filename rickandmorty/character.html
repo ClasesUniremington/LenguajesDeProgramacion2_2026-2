@@ -1,11 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personaje</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/character.css" />
+    <script src="js/character.js" defer></script>
   </head>
   <body>
-    
+    <header>
+      <h1>Detalles del Personaje</h1>
+      <a class="back" href="index.html">← Volver a la lista</a>
+    </header>
+
+    <p id="message" role="status"></p>
+    <div id="spinner" class="spinner" hidden></div>
+
+    <main>
+      <div id="character-details" class="detail"></div>
+      <div id="episodes"></div>
+    </main>
   </body>
 </html>

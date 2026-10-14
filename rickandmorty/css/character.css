@@ -1,0 +1,133 @@
+.character-detail-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    background: #ffffff16;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin: 1.5rem 3.75rem;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+}
+
+.character-poster {
+    width: 16rem;
+    max-width: 100%;
+    aspect-ratio: 1;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.character-info {
+    flex: 1;
+    min-width: 16rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.character-info h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: inherit;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    width: fit-content;
+}
+
+.status-alive {
+    background: rgba(46, 213, 115, 0.2);
+    color: #2ed573;
+    border: 1px solid #2ed573;
+}
+
+.status-dead {
+    background: rgba(255, 71, 87, 0.2);
+    color: #ff4757;
+    border: 1px solid #ff4757;
+}
+
+.status-unknown {
+    background: rgba(164, 176, 190, 0.2);
+    color: #a4b0be;
+    border: 1px solid #a4b0be;
+}
+
+.info-item {
+    font-size: 1rem;
+    margin: 0.25rem 0;
+}
+
+.info-label {
+    font-weight: bold;
+    opacity: 0.85;
+}
+
+/* Sección de episodios */
+.episodes-section {
+    margin: 2rem 3.75rem 3rem;
+}
+
+.episodes-section h2 {
+    margin-bottom: 1.25rem;
+}
+
+.episodes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 1.25rem;
+}
+
+.episode-card {
+    background: #faf8f8;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+/* Sin movimiento al pasar el cursor */
+.episode-card:hover {
+    box-shadow: 0 0.35rem 0.75rem rgba(0, 0, 0, 0.12);
+}
+
+.episode-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0b1636;
+    margin: 0 0 0.5rem 0;
+}
+
+.episode-info {
+    font-size: 0.9rem;
+    color: #0f0f10;
+    margin: 0;
+}
+
+@media (max-width: 37.5rem) {
+    .character-detail-container {
+        margin: 1rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .character-info {
+        align-items: center;
+    }
+
+    .episodes-section {
+        margin: 1.5rem 1rem;
+    }
+}

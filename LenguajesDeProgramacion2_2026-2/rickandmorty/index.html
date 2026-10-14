@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Api</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Rick and Morty</h1>
+      <p>Personajes de la serie.</p>
+    </header>
+
+    <main>
+      <p id="message" role="status"></p>
+      <div id="spinner" class="spinner" hidden></div>
+
+      <div id="content" aria-label="Lista de personajes"></div>
+
+      <nav class="pagination" aria-label="Paginación">
+        <button id="prev" type="button">Anterior</button>
+        <span id="page-number"></span>
+        <button id="next" type="button">Siguiente</button>
+      </nav>
+    </main>
+  </body>
+</html>

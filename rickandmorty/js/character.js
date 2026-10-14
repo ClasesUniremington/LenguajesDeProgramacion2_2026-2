@@ -94,3 +94,41 @@ async function loadEpisodes(url, id) {
   }
 }
 
+async function loadCharacter(url) {
+  const parametros = Number(new URLSearchParams(link).get("id"));
+
+  if (!parametros) {
+    errorR("No se indicó un personaje válido en la URL (falta ?id=)");
+    return;
+  }
+
+  try {
+    loading("Cargando Personaje");
+
+    // Se pide directamente el personaje por su id
+    const response = await fetch(`${url}/${parametros}`);
+
+    if (!response.ok) {
+      errorR(
+        `No se pudo completar la solicitud, por el error ${response.status}`,
+      );
+      loading("");
+      return;
+    }
+
+    const personajeEncontrado = await response.json();
+
+    // Episodios donde aparece ese personaje
+    const episodes = await loadEpisodes(APIEpisodes, parametros);
+
+    showContent(personajeEncontrado, episodes);
+    loading("");
+  } catch (r) {
+    loading("");
+    errorR(`No pudo compilar el programa correctamente por error de red o ${r}`);
+  }
+}
+
+// loadEpisodes ya no se llama aparte: loadCharacter la usa con el id del personaje
+loadCharacter(API);
+

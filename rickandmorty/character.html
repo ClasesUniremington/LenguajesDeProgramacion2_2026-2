@@ -1,11 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personaje</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/character.js" defer></script>
   </head>
   <body>
-    
+    <header>
+      <h1>Rick and Morty</h1>
+      <a href="index.html">← Volver a la lista</a>
+    </header>
+
+    <main>
+      <p id="message" role="status">Cargando personaje...</p>
+      <div id="spinner" class="spinner" aria-label="Cargando"></div>
+
+      <article id="character"></article>
+
+      <section id="episodes-section" hidden>
+        <h2>Episodios</h2>
+        <p id="episodes-message"></p>
+        <ul id="episodes"></ul>
+      </section>
+    </main>
   </body>
 </html>

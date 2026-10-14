@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  background: #f4f4f4;
+  color: #222;
+  padding: 24px;
+}
+
+/* Contenedor principal */
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border: 2px solid #444;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* 1. Encabezado */
+.header h1 {
+  font-size: 1.6rem;
+}
+
+.header a {
+  font-size: 0.85rem;
+  color: #222;
+}
+
+/* Mensajes de carga / error */
+#message,
+#mostrarError {
+  margin: 12px 0;
+  font-size: 0.9rem;
+}
+
+#mostrarError {
+  color: #b00020;
+}
+
+/* 2 y 3. Imagen a la izquierda + información a la derecha */
+.card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 24px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+.card > img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px dashed #888;
+  background: #ccc;
+}
+
+.info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+/* Filas "Etiqueta   valor" */
+.info dl {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  row-gap: 8px;
+  column-gap: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+.info dt {
+  font-weight: bold;
+}
+
+/* 4. Episodios (ocupa todo el ancho debajo) */
+.episodes {
+  grid-column: 1 / -1;
+}
+
+.episodes h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.episodes ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.episodes li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+}
+
+.episodes li strong {
+  font-weight: bold;
+}
+
+.episodes li span {
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .card > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+}

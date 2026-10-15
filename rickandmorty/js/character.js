@@ -66,6 +66,8 @@ async function loadEpisodes(episodeUrls) {
   episodesList.innerHTML = "";
   episodesMessage.classList.remove("error");
 
+  // =================== //
+
   if (episodeUrls.length === 0) {
     episodesMessage.textContent = "Este personaje no aparece en episodios.";
     return;
@@ -73,7 +75,7 @@ async function loadEpisodes(episodeUrls) {
 
   episodesMessage.textContent = "Cargando episodios...";
 
-// =================== //
+  
   try {
     const ids = episodeUrls.map((url) => url.split("/").pop());
     const response = await fetch(`${EPISODE_API}${ids.join(",")}`);

@@ -125,6 +125,67 @@ header h1 {
   outline-offset: 0.1875rem;
 }
 
+.detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem 3.75rem;
+}
+
+.detail[hidden] {
+  display: none;
+}
+
+.detail img {
+  display: block;
+  flex: 1 1 14rem;
+  max-width: 20rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.detail-info {
+  flex: 2 1 16rem;
+}
+
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1rem;
+}
+
+dt {
+  font-weight: 700;
+}
+
+dd {
+  margin: 0;
+}
+
+.related {
+  padding: 0 3.75rem;
+}
+
+.episode-list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.episode-list li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.15);
+}
+
 /**
   Manejo de responsive
 */
@@ -136,5 +197,13 @@ header h1 {
   #content {
     padding: 1rem;
     gap: 0.75rem;
+  }
+
+  .detail {
+    padding: 1rem;
+  }
+
+  .related {
+    padding: 0 1rem;
   }
 }
